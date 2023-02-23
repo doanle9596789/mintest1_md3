@@ -1,0 +1,36 @@
+create database managerstudents1;
+use managerstudents1;
+create table Address(
+id int unique not null primary key auto_increment,
+address varchar(100) not null
+);
+create table Classes(
+id int unique not null primary key auto_increment,
+name varchar(30) not null,
+language varchar(30) not null,
+description varchar(1000) not null
+);
+create table Students(
+id int unique not null primary key auto_increment,
+fullname varchar(50) not null,
+address_id varchar(50)  not null ,
+age int not null,
+phone int unique not null,
+class_id int not null 
+);
+create table Course(
+id int unique not null primary key auto_increment,
+name varchar(50)not null,
+description varchar(60) not null
+);
+create table Point(
+id int unique not null primary key auto_increment,
+course_id int  not null,
+students_id int not null,
+point varchar(60) not null 
+);
+select *from Students where fullname like 'nguyen%';
+select *from Students where fullname like '%Anh';
+use managerstudents1;
+select * from Students where age between "18" and "25";
+select*from Students where id=12 or id=13;
